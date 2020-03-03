@@ -7,7 +7,7 @@ import javax.persistence.*
 data class User(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        val id: UUID,
+        val id: UUID? = null,
         @Column
         val login: String,
         @Column
