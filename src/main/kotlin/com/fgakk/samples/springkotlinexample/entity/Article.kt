@@ -16,4 +16,6 @@ data class Article(
         val date: LocalDateTime = LocalDateTime.now(),
         val headlineSlug: String = headline.toSlug(),
         @Column(length = 1023)
-        val body: String)
+        val body: String,
+        @OneToMany(mappedBy = "article")
+        val comments: List<Comment> = emptyList())

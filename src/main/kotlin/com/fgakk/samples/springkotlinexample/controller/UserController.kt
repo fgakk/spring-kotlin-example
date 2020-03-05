@@ -17,5 +17,5 @@ class UserController(private val repository: UserRepository) {
 
     @GetMapping("/{login}")
     fun findOne(@PathVariable login: String) =
-            repository.findByLogin(login) ?: ResponseStatusException(HttpStatus.NOT_FOUND, "This user does not exist")
+            repository.findByLogin(login) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "This user does not exist")
 }
